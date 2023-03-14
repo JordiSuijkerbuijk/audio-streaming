@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <audio></audio>
+    <script src="socketio.min.js"></script>
+    <script type="text/javascript">
+      const socket = io();
+      const audioElement = document.querySelector("audio");
+      (async () => {
+        const mediaStream = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+          video: false,
+        });
+
+        const recorder = new MediaRecorder(mediaStream);
+
+        recorder.addEventListener("dataavailable", (ev) => {
+          console.log("sent");
+          socket.send({ data: ev.data });
+        });
+
+        recorder.start("1000");
+      })();
+    </script>
+  </body>
+</html>

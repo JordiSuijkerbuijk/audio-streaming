@@ -1,0 +1,26 @@
+{
+  "name": "audio-streaming",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "nodemon ./app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/JordiSuijkerbuijk/audio-streaming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JordiSuijkerbuijk/audio-streaming/issues"
+  },
+  "homepage": "https://github.com/JordiSuijkerbuijk/audio-streaming#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <audio controls></audio>
+    <script src="socketio.min.js"></script>
+    <script type="text/javascript">
+      const context = new AudioContext();
+      const source = context.createBufferSource();
+      const audioElement = document.querySelector("audio");
+      const socket = io();
+      socket.on("audio", async ({ data }) => {
+        // TODO: what to do with this arraybuffer to play ? :(
+      });
+    </script>
+  </body>
+</html>
